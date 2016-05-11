@@ -91,6 +91,9 @@ namespace MCGalaxy.Commands {
         public override string type { get { return CommandTypes.World; } }
         public override bool museumUsable { get { return false; } }
         public override LevelPermission defaultRank { get { return LevelPermission.Guest; } }
+        public override CommandAlias[] Aliases {
+            get { return new[] { new CommandAlias("rejoin") }; }
+        }
 
         public override void Use(Player p, string message) {
             if (p == null) { MessageInGameOnly(p); return; }
